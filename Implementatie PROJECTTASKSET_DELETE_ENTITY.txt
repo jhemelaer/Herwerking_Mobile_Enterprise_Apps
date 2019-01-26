@@ -1,0 +1,8 @@
+ method PROJECTTASKSET_DELETE_ENTITY.
+DATA: ls_taak       TYPE ZCL_Z_MVJ_ODATA_FLEXSO_MPC=>TS_PROJECTTASK.
+     CALL METHOD io_tech_request_context->get_converted_keys
+       IMPORTING
+         es_key_values = ls_taak.
+     DELETE FROM YXM_FL_TASK
+       WHERE ID = @ls_taak-IDTASK.
+  endmethod.
