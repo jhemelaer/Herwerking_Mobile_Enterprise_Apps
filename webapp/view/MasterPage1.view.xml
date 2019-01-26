@@ -5,18 +5,18 @@
 			<Button press="naarEngles" text="Duits"></Button>
 			
 			
-			<List mode="SingleSelectMaster" width="100%" headerText="Projecten" footerText="" backgroundDesign="Solid" showSeparators="All"
+			<List id="projectenlijst" mode="SingleSelectMaster" width="100%" headerText="Projecten" footerText="" backgroundDesign="Solid" showSeparators="All"
 				growing="true" growingThreshold="20" growingScrollToLoad="true" visible="true" items="{/PROJECTSet}" selectionChange="onSelectionChange">
 				<infoToolbar/>
 				<headerToolbar>
 					<Toolbar enabled="true" visible="true" width="" design="Solid">
 						<content>
-							<SearchField placeholder="Search" showSearchButton="true" visible="true" width="100%"/>
+							<SearchField placeholder="Search" showSearchButton="true" visible="true" width="100%" search="handleSearch"/>
 						</content>
 					</Toolbar>
 				</headerToolbar>
 				<items>
-					<ObjectListItem title="{Titel}" type="Active"/>
+					<ObjectListItem intro="{Id}" title="{Titel}" type="Active"/>
 				</items>
 			</List>
 			
