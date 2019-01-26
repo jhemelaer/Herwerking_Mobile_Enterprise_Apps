@@ -1,0 +1,8 @@
+ method PROJECTSET_DELETE_ENTITY.
+DATA: ls_project       TYPE ZCL_Z_MVJ_ODATA_FLEXSO_MPC=>TS_PROJECT.
+     CALL METHOD io_tech_request_context->get_converted_keys
+       IMPORTING
+         es_key_values = ls_project.
+     DELETE FROM YXM_FL_PROJECT
+       WHERE ID = @ls_project-ID.
+  endmethod.
