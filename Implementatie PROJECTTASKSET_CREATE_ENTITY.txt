@@ -1,0 +1,25 @@
+  method PROJECTTASKSET_CREATE_ENTITY.
+  DATA: ls_request_input_data TYPE ZCL_Z_MVJ_ODATA_FLEXSO_MPC=>TS_PROJECTTASK,
+          ls_taakinfo TYPE YXM_FL_TASK,
+          id TYPE INT4.
+
+    IO_DATA_PROVIDER->READ_ENTRY_DATA( IMPORTING es_data = ls_request_input_data ).
+
+    select count(*) from Z_140_TASK INTO id.
+    ls_taakinfo-ID = id + 1.
+    ls_taakinfo-IDLID = LS_REQUEST_INPUT_DATA-IDLID.
+    ls_taakinfo-IDPROJECT = LS_REQUEST_INPUT_DATA-IDPROJECT.
+    ls_taakinfo-TITEL = LS_REQUEST_INPUT_DATA-PROJECTTITEL.
+    ls_taakinfo-DESCRIPTION = LS_REQUEST_INPUT_DATA-PROJECTDESC.
+    ls_taakinfo-STATUSID = LS_REQUEST_INPUT_DATA-PROJECTSTATUS.
+
+    INSERT YXM_FL_TASK FROM ls_taakinfo.
+    IF sy-subrc = 0.
+      ER_ENTITY = LS_REQUEST_INPUT_DATA.
+      ELSE.
+        RAISE EXCEPTION TYPE /IWBEP/CX_MGW_BUSI_EXCEPTION
+        EXPORTING
+          textid = /IWBEP/CX_MGW_BUSI_EXCEPTION=>BUSINESS_ERROR
+          message = 'taak bestaat al'.
+     ENDIF.
+  endmethod.
