@@ -1,0 +1,8 @@
+  method PROJECTLIDSET_DELETE_ENTITY.
+DATA: ls_lid       TYPE ZCL_Z_MVJ_ODATA_FLEXSO_MPC=>TS_PROJECTLID.
+     CALL METHOD io_tech_request_context->get_converted_keys
+       IMPORTING
+         es_key_values = ls_lid.
+     DELETE FROM YXM_FL_LID
+       WHERE IDPERSOON = @ls_lid-IDPERSOON.
+  endmethod.
