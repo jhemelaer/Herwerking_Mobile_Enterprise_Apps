@@ -270,6 +270,13 @@
 							<!--		<data:Measure name="mea0" label="Aantal" role="axis2"/>-->
 							<!--	</chart:measures>-->
 							<!--</chart:Chart>-->
+							
+							<Text text="Hardcoded versie" />
+							
+						<viz:VizFrame xmlns="sap.viz" id="idcolumn" width="100%">
+</viz:VizFrame>
+							
+							<Text text="oData-versie" />
 							<viz:VizFrame height='100%' id="idVizFrame" uiConfig="{applicationSet:'fiori'}" vizType='bar' width="100%">
 						<viz:dataset>
 							<viz.data:FlattenedDataset data="{/PROJECTSet}">
