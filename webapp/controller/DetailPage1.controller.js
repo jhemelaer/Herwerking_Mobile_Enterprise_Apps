@@ -542,27 +542,26 @@ var oVizFrame = this.getView().byId("idcolumn");
 //                2.Create a JSON Model and set the data
 var oModel = new sap.ui.model.json.JSONModel();
 var data = {
-'Cars' : [
-{"Model": "Alto","Value": "758620"},
-{"Model": "Zen","Value": "431160"},
-{"Model": "Santro","Value": "515100"},
-{"Model": "Matiz","Value": "293780"},
-{"Model": "Wagan R","Value": "974010"},
+'Taakscores' : [
+{"Projecttitel": "3D printer boxen maken","Taskscore": "2"}, //2
+{"Projecttitel": "Cloud Platform Cockpit in orde maken","Taskscore": "3"}, //8
+{"Projecttitel": "maak een cloudconnector voor jordi","Taskscore": "1"}, //0
+{"Projecttitel": "Schrijf het vergaderverslag uit","Taskscore": "5"}, //2
 ]};
 oModel.setData(data);
 
 //                3. Create Viz dataset to feed to the data to the graph
 var oDataset = new sap.viz.ui5.data.FlattenedDataset({
 dimensions : [{
-name : 'Model',
-value : "{Model}"}],
+name : 'Projecttitel',
+value : "{Projecttitel}"}],
 
 measures : [{
-name : 'Cars Bought',
-value : '{Value}'} ],
+name : 'Taskscore',
+value : '{Taskscore}'} ],
 
 data : {
-path : "/Cars"
+path : "/Taakscores"
 }
 });
 oVizFrame.setDataset(oDataset);
@@ -578,12 +577,12 @@ colorPalette : d3.scale.category20().range()
 var feedValueAxis = new sap.viz.ui5.controls.common.feeds.FeedItem({
 'uid': "valueAxis",
 'type': "Measure",
-'values': ["Cars Bought"]
+'values': ["Taskscore"]
 }),
 feedCategoryAxis = new sap.viz.ui5.controls.common.feeds.FeedItem({
 'uid': "categoryAxis",
 'type': "Dimension",
-'values': ["Model"]
+'values': ["Projecttitel"]
 });
 oVizFrame.addFeed(feedValueAxis);
 oVizFrame.addFeed(feedCategoryAxis);

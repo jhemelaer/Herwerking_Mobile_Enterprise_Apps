@@ -271,7 +271,7 @@
 							<!--	</chart:measures>-->
 							<!--</chart:Chart>-->
 							
-							<Text text="Hardcoded versie" />
+							<Text text="Hardcoded versie. Deze versie bevat andere taken dan de oData-service met taakscores die korter bij elkaar liggen en geen dubbele taaknamen." />
 							
 						<viz:VizFrame xmlns="sap.viz" id="idcolumn" width="100%">
 </viz:VizFrame>
