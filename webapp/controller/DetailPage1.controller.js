@@ -533,10 +533,10 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				return oValueToFormat;
 			}
 
-			var aDimensions = oView.byId("sap_IconTabBar_Page_0-content-sap_chart_BarChart-1544917068946").getDimensions();
-			aDimensions.forEach(function (oDimension) {
-				oDimension.setTextFormatter(dateDimensionFormatter);
-			});
+			//var aDimensions = oView.byId("sap_IconTabBar_Page_0-content-sap_chart_BarChart-1544917068946").getDimensions();
+			//aDimensions.forEach(function (oDimension) {
+			//	oDimension.setTextFormatter(dateDimensionFormatter);
+			//});
 
 		},
 		onAfterRendering: function () {
@@ -547,7 +547,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				oView = this.getView();
 
 			oChart = oView.byId("sap_IconTabBar_Page_0-content-sap_chart_BarChart-1544917068946");
-			oChart.bindData(oBindingParameters['sap_IconTabBar_Page_0-content-sap_chart_BarChart-1544917068946']);
+		//	oChart.bindData(oBindingParameters['sap_IconTabBar_Page_0-content-sap_chart_BarChart-1544917068946']);
 
 		}
 	});
