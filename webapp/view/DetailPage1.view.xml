@@ -1,6 +1,6 @@
 <mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.mRv4.controller.DetailPage1" xmlns="sap.m"
 	xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:data="sap.chart.data"
-	xmlns:semantic="sap.m.semantic" xmlns:viz.data="sap.viz.ui5.data"
+	xmlns:semantic="sap.m.semantic" xmlns:viz.data="sap.viz.ui5.data" xmlns:tnt="sap.tnt"
 	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz="sap.viz.ui5.controls">
 	<Page title="Projectenbeheer" showHeader="true" showFooter="true" showNavButton="false">
 		<content>
