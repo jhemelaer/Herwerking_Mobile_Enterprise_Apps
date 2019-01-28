@@ -530,11 +530,8 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				}
 				return oValueToFormat;
 			}
-
-			//var aDimensions = oView.byId("sap_IconTabBar_Page_0-content-sap_chart_BarChart-1544917068946").getDimensions();
-			//aDimensions.forEach(function (oDimension) {
-			//	oDimension.setTextFormatter(dateDimensionFormatter);
-			//});
+			
+			// Hardcoded grafiek:
 			
 			//                1.Get the id of the VizFrame
 var oVizFrame = this.getView().byId("idcolumn");
@@ -586,6 +583,8 @@ feedCategoryAxis = new sap.viz.ui5.controls.common.feeds.FeedItem({
 });
 oVizFrame.addFeed(feedValueAxis);
 oVizFrame.addFeed(feedCategoryAxis);
+
+// Versie oData:
 
 		},
 		onAfterRendering: function () {
