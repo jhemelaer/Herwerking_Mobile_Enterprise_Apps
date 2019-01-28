@@ -180,9 +180,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			/*
 			
 			oEntry.Empid = "ABC123";
-
                      oEntry.Firstname = "Chandra";
-
                      oEntry.Lastname = "Mahajan";
 			
 			*/
