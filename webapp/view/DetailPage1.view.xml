@@ -270,20 +270,20 @@
 							<!--		<data:Measure name="mea0" label="Aantal" role="axis2"/>-->
 							<!--	</chart:measures>-->
 							<!--</chart:Chart>-->
-							<viz:VizFrame height='100%' id="idVizFrame" uiConfig="{applicationSet:'fiori'}" vizType='line' width="100%">
+							<viz:VizFrame height='100%' id="idVizFrame" uiConfig="{applicationSet:'fiori'}" vizType='bar' width="100%">
 						<viz:dataset>
 							<viz.data:FlattenedDataset data="{/PROJECTSet}">
 								<viz.data:dimensions>
-									<viz.data:DimensionDefinition name="id" value="{Id}"/>
+									<viz.data:DimensionDefinition name="Titel" value="{Titel}"/>
 								</viz.data:dimensions>
 								<viz.data:measures>
-									<viz.data:MeasureDefinition name="titel" value="{Titel}"/>
+									<viz.data:MeasureDefinition name="Id" value="{Id}"/>
 								</viz.data:measures>
 							</viz.data:FlattenedDataset>
 						</viz:dataset>
 						<viz:feeds>
-							<viz.feeds:FeedItem id='valueAxisFeed' type="Measure" uid="valueAxis" values="id"/>
-							<viz.feeds:FeedItem id='categoryAxisFeed' type="Dimension" uid="categoryAxis" values="titel"/>
+							<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Id" />
+            		<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Titel" />
 						</viz:feeds>
 					</viz:VizFrame>
 						</content>
