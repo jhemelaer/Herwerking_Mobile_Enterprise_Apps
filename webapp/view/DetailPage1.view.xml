@@ -1,5 +1,7 @@
 <mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.mRv4.controller.DetailPage1" xmlns="sap.m"
-	xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:tnt="sap.tnt" xmlns:viz="sap.viz.ui5.controls" xmlns:data="sap.chart.data">
+	xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:data="sap.chart.data"
+	xmlns:semantic="sap.m.semantic" xmlns:viz.data="sap.viz.ui5.data"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz="sap.viz.ui5.controls">
 	<Page title="Projectenbeheer" showHeader="true" showFooter="true" showNavButton="false">
 		<content>
 			<IconTabBar expandable="false" expanded="true" applyContentPadding="false" backgroundDesign="Solid" upperCase="false" visible="true"
@@ -268,6 +270,22 @@
 							<!--		<data:Measure name="mea0" label="Aantal" role="axis2"/>-->
 							<!--	</chart:measures>-->
 							<!--</chart:Chart>-->
+							<viz:VizFrame height='100%' id="idVizFrame" uiConfig="{applicationSet:'fiori'}" vizType='line' width="100%">
+						<viz:dataset>
+							<viz.data:FlattenedDataset data="{/PROJECTSet}">
+								<viz.data:dimensions>
+									<viz.data:DimensionDefinition name="id" value="{Id}"/>
+								</viz.data:dimensions>
+								<viz.data:measures>
+									<viz.data:MeasureDefinition name="titel" value="{Titel}"/>
+								</viz.data:measures>
+							</viz.data:FlattenedDataset>
+						</viz:dataset>
+						<viz:feeds>
+							<viz.feeds:FeedItem id='valueAxisFeed' type="Measure" uid="valueAxis" values="id"/>
+							<viz.feeds:FeedItem id='categoryAxisFeed' type="Dimension" uid="categoryAxis" values="titel"/>
+						</viz:feeds>
+					</viz:VizFrame>
 						</content>
 					</IconTabFilter>
 				</items>
