@@ -593,13 +593,7 @@ var oVizFrameOData = this.getView().byId("idcolumnOData");
 //oVizFrameOData.setModel(sap.ui.getCore().getModel());
 
 var model = new sap.ui.model.json.JSONModel();
-		model.setData({
-			modelData: {
-			projectsData : []
-			}
-			});
 		oVizFrameOData.setModel(model);
-		oVizFrameOData.getModel().setProperty("/modelData/projectsData", "/PROJECTTASKSet");
 
 //                3. Create Viz dataset to feed to the data to the graph
 var oDatasetOData = new sap.viz.ui5.data.FlattenedDataset({

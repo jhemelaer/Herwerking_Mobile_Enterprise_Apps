@@ -277,20 +277,20 @@
 </viz:VizFrame>
 							
 							<Text text="oData-versie" />
-						<viz:VizFrame height='100%' id="idVizFrame" uiConfig="{applicationSet:'fiori'}" vizType='bar' width="100%">
+						<viz:VizFrame height='100%' id="idVizFrame" uiConfig="{applicationSet:'fiori'}" vizType='column' width="100%">
 						<viz:dataset>
 							<viz.data:FlattenedDataset data="{/PROJECTSet}">
 								<viz.data:dimensions>
-									<viz.data:DimensionDefinition name="Titel" value="{Titel}"/>
+									<viz.data:DimensionDefinition name="Projectitel" value="{Projecttitel}"/>
 								</viz.data:dimensions>
 								<viz.data:measures>
-									<viz.data:MeasureDefinition name="Id" value="{Id}"/>
+									<viz.data:MeasureDefinition name="Taskscore" value="{Taskscore}"/>
 								</viz.data:measures>
 							</viz.data:FlattenedDataset>
 						</viz:dataset>
 						<viz:feeds>
-							<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Id" />
-            		<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Titel" />
+							<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Taskscore" />
+            		<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Projectitel" />
 						</viz:feeds>
 					</viz:VizFrame>
 						</content>
