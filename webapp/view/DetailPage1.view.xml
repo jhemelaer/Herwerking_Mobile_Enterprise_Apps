@@ -277,7 +277,7 @@
 </viz:VizFrame>
 							
 							<Text text="oData-versie" />
-							<viz:VizFrame height='100%' id="idVizFrame" uiConfig="{applicationSet:'fiori'}" vizType='bar' width="100%">
+						<viz:VizFrame height='100%' id="idVizFrame" uiConfig="{applicationSet:'fiori'}" vizType='bar' width="100%">
 						<viz:dataset>
 							<viz.data:FlattenedDataset data="{/PROJECTSet}">
 								<viz.data:dimensions>

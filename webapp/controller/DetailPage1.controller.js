@@ -584,7 +584,59 @@ feedCategoryAxis = new sap.viz.ui5.controls.common.feeds.FeedItem({
 oVizFrame.addFeed(feedValueAxis);
 oVizFrame.addFeed(feedCategoryAxis);
 
-// Versie oData:
+/*// Versie oData: (Kijk eens  naar de code op Github, daar waar er geen data werd gevonden)
+
+
+
+			//                1.Get the id of the VizFrame
+var oVizFrameOData = this.getView().byId("idcolumnOData");
+//oVizFrameOData.setModel(sap.ui.getCore().getModel());
+
+var model = new sap.ui.model.json.JSONModel();
+		model.setData({
+			modelData: {
+			projectsData : []
+			}
+			});
+		oVizFrameOData.setModel(model);
+		oVizFrameOData.getModel().setProperty("/modelData/projectsData", "/PROJECTTASKSet");
+
+//                3. Create Viz dataset to feed to the data to the graph
+var oDatasetOData = new sap.viz.ui5.data.FlattenedDataset({
+dimensions : [{
+name : 'Projecttitel',
+value : "{Projecttitel}"}],
+
+measures : [{
+name : 'Taskscore',
+value : '{Taskscore}'} ],
+
+data : {
+path : "/modelData/projectsData"
+}
+}).bindData("/PROJECTTASKSet",null,null,[]);
+
+oVizFrameOData.setDataset(oDatasetOData);
+/*oVizFrameOData.setVizType('column');
+
+//                4.Set Viz properties
+oVizFrameOData.setVizProperties({
+plotArea: {
+colorPalette : d3.scale.category20().range()
+}});
+
+var feedValueAxisOData = new sap.viz.ui5.controls.common.feeds.FeedItem({
+'uid': "valueAxis",
+'type': "Measure",
+'values': ["Taskscore"]
+}),
+feedCategoryAxisOData = new sap.viz.ui5.controls.common.feeds.FeedItem({
+'uid': "categoryAxis",
+'type': "Dimension",
+'values': ["Projecttitel"]
+});
+oVizFrame.addFeed(feedValueAxisOData);
+oVizFrame.addFeed(feedCategoryAxisOData);*/
 
 		},
 		onAfterRendering: function () {
